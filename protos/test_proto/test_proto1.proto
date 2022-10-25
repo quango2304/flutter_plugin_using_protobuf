@@ -1,0 +1,20 @@
+syntax = "proto3";
+option java_package = "com.quango.proto.plugin_using_protobuf";
+
+message TestProto1 {
+  enum Status {
+    IN_PROGRESS = 0;
+    NOT_STARTED = 1;
+    SUCCESS = 2;
+  }
+
+  message Action {
+    oneof action {
+      string finish = 1;
+    }
+  }
+
+  message Result {
+    Status status = 1;
+  }
+}
